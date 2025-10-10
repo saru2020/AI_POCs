@@ -1,3 +1,9 @@
+./venv/*
+./env
+./vscode/*
+Movies_Graph_RAG_Demo/.venv/*
+Movies_Graph_RAG_Demo/.env
+Movies_Graph_RAG_Demo/.vscode/*
 Backtester_AI_Agent/.venv/*
 Backtester_AI_Agent/.env
 Backtester_AI_Agent/.vscode/*

@@ -1,0 +1,29 @@
+# Jupyter POC Dependencies
+jupyter==1.0.0
+notebook==7.0.6
+
+# Database
+neo4j==5.15.0
+
+# LLM and AI
+openai==1.3.7
+sentence-transformers==2.2.2
+
+# Data processing
+pandas==2.1.4
+numpy==1.24.4
+networkx==3.2.1
+
+# API and HTTP
+requests==2.31.0
+
+# Environment and config
+python-dotenv==1.0.0
+
+# Visualization
+matplotlib==3.8.2
+seaborn==0.13.0
+plotly==5.17.0
+
+# Additional utilities
+tqdm==4.66.1

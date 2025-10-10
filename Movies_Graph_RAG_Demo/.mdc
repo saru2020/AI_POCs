@@ -1,0 +1,145 @@
+# Movies GraphRAG Demo - MDC Configuration
+
+## Project Metadata
+- **Name**: Movies GraphRAG Demo
+- **Description**: Production-ready movie recommendation system using GraphRAG
+- **Version**: 1.0.0
+- **Author**: Saravanan
+- **License**: MIT
+- **Repository**: https://github.com/saravanan/AI_POCs
+
+## Technology Stack
+- **Backend**: Python 3.11+, FastAPI, Pydantic
+- **Graph Database**: Neo4j
+- **LLM Integration**: OpenAI API, Anthropic Claude
+- **GraphRAG**: Microsoft GraphRAG Toolkit
+- **Frontend**: React, Next.js, TypeScript
+- **Testing**: pytest, pytest-cov, pytest-asyncio
+- **Containerization**: Docker, Docker Compose
+- **CI/CD**: GitHub Actions
+- **Monitoring**: Prometheus, Grafana
+- **Documentation**: Sphinx, OpenAPI
+
+## Development Environment
+- **Python Version**: 3.11+
+- **Node.js Version**: 18+
+- **Docker Version**: 20.10+
+- **Neo4j Version**: 5.0+
+- **Redis Version**: 7.0+
+
+## Project Structure
+```
+Movies_Graph_RAG_Demo/
+├── src/
+│   ├── api/                 # FastAPI application
+│   ├── core/                # Core business logic
+│   ├── data/                # Data models and schemas
+│   ├── graph/               # Graph database operations
+│   ├── llm/                 # LLM integration
+│   ├── evaluation/          # Evaluation framework
+│   └── utils/               # Utility functions
+├── tests/                   # Test suite
+├── frontend/                # React frontend
+├── docker/                  # Docker configurations
+├── scripts/                 # Setup and deployment scripts
+├── docs/                    # Documentation
+└── examples/                # Usage examples
+```
+
+## Key Features
+- **GraphRAG Integration**: Advanced knowledge graph reasoning
+- **Multi-hop Queries**: Complex relationship traversal
+- **LLM Integration**: Natural language query processing
+- **Evaluation Framework**: Comprehensive recommendation quality assessment
+- **Real-time Processing**: Live query processing and recommendations
+- **Scalable Architecture**: Microservices-based design
+- **Production Ready**: Monitoring, logging, and error handling
+
+## API Endpoints
+- `GET /health` - Health check
+- `POST /recommendations` - Get movie recommendations
+- `GET /movies/{id}` - Get movie details
+- `POST /query` - Natural language query processing
+- `GET /evaluation` - Get evaluation metrics
+- `POST /feedback` - Submit user feedback
+
+## Environment Variables
+- `NEO4J_URI` - Neo4j database URI
+- `NEO4J_USER` - Neo4j username
+- `NEO4J_PASSWORD` - Neo4j password
+- `OPENAI_API_KEY` - OpenAI API key
+- `ANTHROPIC_API_KEY` - Anthropic API key
+- `TMDB_API_KEY` - TMDB API key
+- `REDIS_URL` - Redis connection URL
+- `LOG_LEVEL` - Logging level
+
+## Database Schema
+- **Movies**: Movie entities with metadata
+- **Actors**: Actor entities
+- **Directors**: Director entities
+- **Genres**: Genre entities
+- **Ratings**: User ratings
+- **Relationships**: ACTED_IN, DIRECTED, BELONGS_TO, SIMILAR_TO
+
+## Evaluation Metrics
+- **Precision**: Accuracy of recommendations
+- **Recall**: Coverage of relevant items
+- **NDCG**: Normalized Discounted Cumulative Gain
+- **User Satisfaction**: User feedback scores
+- **Response Time**: Query processing time
+- **Cost Efficiency**: LLM API cost per query
+
+## Deployment
+- **Local Development**: Docker Compose
+- **Production**: Kubernetes with Helm
+- **Cloud**: AWS/GCP/Azure compatible
+- **Monitoring**: Prometheus + Grafana
+- **Logging**: ELK Stack
+
+## Testing Strategy
+- **Unit Tests**: Individual component testing
+- **Integration Tests**: API and database integration
+- **End-to-End Tests**: Full system testing
+- **Performance Tests**: Load and stress testing
+- **Security Tests**: Vulnerability scanning
+
+## Documentation
+- **API Documentation**: OpenAPI/Swagger
+- **Architecture Docs**: System design and decisions
+- **User Guide**: How to use the system
+- **Developer Guide**: How to contribute
+- **Deployment Guide**: How to deploy
+
+## Performance Targets
+- **Response Time**: < 200ms for 95% of requests
+- **Throughput**: 1000+ concurrent users
+- **Availability**: 99.9% uptime
+- **Accuracy**: > 85% recommendation accuracy
+- **Cost**: < $0.01 per recommendation
+
+## Security Considerations
+- **API Authentication**: JWT tokens
+- **Rate Limiting**: Per-user and per-IP limits
+- **Input Validation**: Comprehensive data validation
+- **SQL Injection**: Parameterized queries
+- **XSS Protection**: Input sanitization
+- **CORS**: Proper cross-origin configuration
+
+## Monitoring and Alerting
+- **Health Checks**: Application and dependency health
+- **Metrics**: Custom business and technical metrics
+- **Logging**: Structured logging with correlation IDs
+- **Tracing**: Distributed request tracing
+- **Alerting**: Critical error and performance alerts
+
+## Backup and Recovery
+- **Database Backups**: Automated daily backups
+- **Configuration Backups**: Version-controlled configs
+- **Disaster Recovery**: Multi-region deployment
+- **Data Retention**: Configurable retention policies
+
+## Compliance
+- **GDPR**: Data privacy compliance
+- **SOC 2**: Security compliance
+- **ISO 27001**: Information security management
+- **PCI DSS**: Payment card industry compliance

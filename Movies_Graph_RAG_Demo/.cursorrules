@@ -1,0 +1,143 @@
+# Movies GraphRAG Demo - Cursor Rules
+
+## Project Overview
+This is a movie recommendation system using GraphRAG (Graph Retrieval-Augmented Generation) that demonstrates AI/ML capabilities.
+
+## Code Quality Standards
+- Follow PEP 8 style guidelines
+- Use type hints for all function parameters and return values
+- Write comprehensive docstrings for all classes and functions
+- Maintain 90%+ test coverage
+- Use meaningful variable and function names
+- Keep functions small and focused (max 20 lines)
+- Avoid deep nesting (max 3 levels)
+
+## Architecture Principles
+- Follow SOLID principles
+- Use dependency injection where appropriate
+- Implement proper error handling and logging
+- Use async/await for I/O operations
+- Implement proper caching strategies
+- Follow microservices patterns for scalability
+
+## Testing Requirements
+- Write tests before implementing features (TDD)
+- Use pytest for all testing
+- Mock external dependencies (APIs, databases)
+- Test edge cases and error conditions
+- Use fixtures for test data setup
+- Implement integration tests for critical paths
+
+## Documentation Standards
+- Write clear, concise docstrings
+- Include usage examples in docstrings
+- Document all public APIs
+- Keep README.md updated
+- Document architectural decisions
+- Include performance benchmarks
+
+## Security Guidelines
+- Never commit API keys or secrets
+- Use environment variables for configuration
+- Validate all input data
+- Implement proper authentication
+- Use HTTPS for all external communications
+- Sanitize user inputs
+
+## Performance Guidelines
+- Profile code for bottlenecks
+- Use appropriate data structures
+- Implement caching where beneficial
+- Optimize database queries
+- Monitor memory usage
+- Use async operations for I/O
+
+## GraphRAG Specific Guidelines
+- Implement proper graph traversal algorithms
+- Use efficient query patterns
+- Cache frequently accessed graph data
+- Implement proper error handling for graph operations
+- Monitor graph query performance
+- Use appropriate graph indexing strategies
+
+## LLM Integration Guidelines
+- Implement proper prompt engineering
+- Use structured output formats
+- Implement retry logic for API calls
+- Cache LLM responses where appropriate
+- Monitor token usage and costs
+- Implement fallback mechanisms
+
+## Database Guidelines
+- Use connection pooling
+- Implement proper transaction management
+- Use appropriate indexes
+- Monitor query performance
+- Implement data validation
+- Use migrations for schema changes
+
+## API Design Guidelines
+- Follow RESTful principles
+- Use proper HTTP status codes
+- Implement rate limiting
+- Use pagination for large datasets
+- Implement proper error responses
+- Version your APIs
+
+## Docker Guidelines
+- Use multi-stage builds
+- Minimize image size
+- Use specific version tags
+- Implement health checks
+- Use .dockerignore files
+- Optimize layer caching
+
+## Git Guidelines
+- Use meaningful commit messages
+- Create feature branches
+- Use pull requests for code review
+- Keep commits atomic
+- Use conventional commit format
+- Tag releases properly
+
+## File Organization
+- Keep related code together
+- Use proper package structure
+- Separate concerns clearly
+- Use configuration files
+- Keep secrets in environment files
+- Use proper import organization
+
+## Error Handling
+- Use specific exception types
+- Log errors with context
+- Implement proper error recovery
+- Use structured logging
+- Monitor error rates
+- Implement alerting for critical errors
+
+## Monitoring and Observability
+- Use structured logging
+- Implement metrics collection
+- Use distributed tracing
+- Monitor key performance indicators
+- Implement health checks
+- Create dashboards for monitoring
+
+## Dependencies
+- Pin dependency versions
+- Use virtual environments
+- Keep dependencies up to date
+- Use security scanning
+- Document dependency choices
+- Minimize dependency count
+
+## Code Review Checklist
+- [ ] Code follows style guidelines
+- [ ] Tests are comprehensive
+- [ ] Documentation is complete
+- [ ] Error handling is proper
+- [ ] Performance is acceptable
+- [ ] Security considerations addressed
+- [ ] Dependencies are appropriate
+- [ ] Code is maintainable

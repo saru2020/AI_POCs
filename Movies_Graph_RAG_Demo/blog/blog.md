@@ -1,4 +1,6 @@
-# My Journey Exploring RAG vs GraphRAG
+# Exploring RAG vs GraphRAG with a simple Movie recommendation system
+
+![blog banner image for a quick visual understanding of the POC](https://raw.githubusercontent.com/saru2020/AI_POCs/main/Movies_Graph_RAG_Demo/blog/ai_generated_blog_image.png)
 
 ## Introduction
 I knew what was RAG and GraphRAG, but didn't clearly understood how only the relationships in GraphRAG were performing better than simple/plain RAGs, so I did a POC to see if it does really make sense.
@@ -219,8 +221,8 @@ Based on the provided graph context of comedy movies with good ratings, here are
    - **Overview:** A youngster's journey
 ```
 
-We could see it almost picked only the comedy movies even with the smallest dataset of 33 movies we had fed it with reinstating that the relationship data was adding significant value.
+We could see it almost picked only the comedy movies even with the smallest dataset of 33 movies we had fed it with, reinstating that the relationship data was adding significant value.
 
 
 ## Conclusion
-`Context` is everything to a LLM and a good model fed with as much context as possible yields better results and this demonstration with RAG vs GraphRAG is the proof for it.
+`Context` is everything to a LLM and a good model fed with as much context as possible yields better results and this POC/demonstration with RAG vs GraphRAG is the simplest example of that.

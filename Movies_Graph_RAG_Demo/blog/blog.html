@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Journey Exploring RAG vs GraphRAG</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        h4 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+        }
+        
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .code-block {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+            font-family: 'Courier New', monospace;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .banner-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .tech-stack {
+            background-color: #e8f5e8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .results-box {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        .conclusion {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            border-left: 4px solid #2196f3;
+            margin-top: 30px;
+        }
+        
+        blockquote {
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://raw.githubusercontent.com/saru2020/AI_POCs/main/Movies_Graph_RAG_Demo/blog/ai_generated_blog_image.png" alt="blog banner image for a quick visual understanding of the POC" class="banner-image">
+        <h1>My Journey Exploring RAG vs GraphRAG</h1>
+        
+        <h2>Introduction</h2>
+        <p>I knew what was RAG and GraphRAG, but didn't clearly understood how only the relationships in GraphRAG were performing better than simple/plain RAGs, so I did a POC to see if it does really make sense.</p>
+        <p>There are many relationship based systems(fraud detection, social media recommendation, etc) where GraphRAG is really useful that could be picked up for the POC but I wanted something simple yet close to my passion, so I picked up the movie recommendation system which has entities/nodes like movies, actors, genres, directors, etc and relationship among them is easy to understand for everyone too.</p>
+        
+        <h2>Tech Stack / Tools</h2>
+        <div class="tech-stack">
+            <ul>
+                <li>Neo4j for graph building logic</li>
+                <li>TMDB API for movies data</li>
+                <li>Open AI API for LLM integration</li>
+            </ul>
+        </div>
+        
+        <h2>Source Code:</h2>
+        <p>I've made all the code available in my <a href="https://github.com/saru2020/AI_POCs/tree/main/Movies_Graph_RAG_Demo">GitHub repository</a>, so that you don't have to read my BS in this blog.</p>
+        <p>Just run the Jupyter notebook and explore it yourself or if you don't want to even do that, then just watch the <a href="https://raw.githubusercontent.com/saru2020/AI_POCs/main/Movies_Graph_RAG_Demo/demo.gif">demo gif</a> in the repo</p>
+        
+        <h2>Technical Implementation</h2>
+        
+        <h3>Fetch movies data</h3>
+        <p><strong>note:</strong> I kept it intentionally small - just 15 artists and their top movies with some hardcoded popular names from Tamil Cinema.</p>
+        
+        <div class="code-block">
+# Initialize TMDB client
+tmdb_api_key = os.getenv('TMDB_API_KEY')
+if not tmdb_api_key:
+    print("❌ Please set TMDB_API_KEY in your .env file")
+    print("Get your API key from: https://www.themoviedb.org/settings/api")
+else:
+    tmdb_client = TMDBClient(tmdb_api_key)
+    print("✅ TMDB client initialized")
+        </div>
+        
+        <img src="https://raw.githubusercontent.com/saru2020/AI_POCs/main/Movies_Graph_RAG_Demo/blog/screenshots/1.png" alt="TMDB Client Initialization">
+        
+        <h3>Building the Knowledge Graph</h3>
+        <p>First, I needed to create a proper knowledge graph. I used Neo4j to model the relationships:</p>
+        
+        <div class="code-block">
+// My graph schema
+CREATE (m:Movie {title: "The Dark Knight", rating: 9.0})
+CREATE (a:Person {name: "Christian Bale", type: "Actor"})
+CREATE (g:Genre {name: "Action"})
+CREATE (d:Person {name: "Christopher Nolan", type: "Director"})
+
+CREATE (a)-[:ACTED_IN]->(m)
+CREATE (m)-[:HAS_GENRE]->(g)
+CREATE (d)-[:DIRECTED]->(m)
+        </div>
+        
+        <p>The graph structure was simple but powerful:</p>
+        <ul>
+            <li><strong>Movies</strong> connected to <strong>Actors</strong> via <code>ACTED_IN</code></li>
+            <li><strong>Movies</strong> connected to <strong>Directors</strong> via <code>DIRECTED</code></li>
+            <li><strong>Movies</strong> connected to <strong>Genres</strong> via <code>HAS_GENRE</code></li>
+        </ul>
+        
+        <h3>The RAG Implementation: Vector Similarity</h3>
+        <p>For regular RAG, I created text embeddings from movie metadata:</p>
+        
+        <div class="code-block">
+class SimpleRAG:
+    def add_documents(self, df):
+        for _, row in df.iterrows():
+            doc_text = f"""
+            Movie: {row['movie_title']}
+            Overview: {row['movie_overview']}
+            Genres: {', '.join(row['movie_genres'])}
+            Cast: {', '.join(row['movie_cast'])}
+            Directors: {', '.join(row['movie_directors'])}
+            """
+            self.documents.append({'text': doc_text, 'metadata': row.to_dict()})
+        
+        # Create embeddings
+        self.embeddings = self.embedding_model.encode(texts)
+        </div>
+        
+        <p>This approach treats each movie as a flat text document and uses cosine similarity to find relevant matches.</p>
+        
+        <h3>The GraphRAG Implementation: Relationship Traversal</h3>
+        <p>For GraphRAG, I implemented graph traversal to extract contextual relationships:</p>
+        
+        <div class="code-block">
+def extract_subgraph_context(self, query):
+    # Query the graph based on relationships
+    cypher_query = f"""
+    MATCH (m:Movie)-[:HAS_GENRE]->(g:Genre)
+    WHERE {genre_filter}
+    WITH m, collect(g.name) as genres
+    MATCH (m)<-[:ACTED_IN]-(p:Person)
+    WITH m, genres, collect(p.name) as actors
+    MATCH (m)<-[:DIRECTED]-(d:Person)
+    WITH m, genres, actors, collect(d.name) as directors
+    RETURN m.title, m.overview, genres, actors, directors
+    """
+        </div>
+        
+        <p>This approach leverages the graph structure to find movies through their relationships, not just text similarity.</p>
+        
+        <img src="https://raw.githubusercontent.com/saru2020/AI_POCs/main/Movies_Graph_RAG_Demo/blog/screenshots/2.png" alt="GraphRAG Implementation">
+        
+        <h3>Visualising the Graph</h3>
+        <p>I created a simple graph visualization to see what was happening:</p>
+        
+        <div class="code-block">
+def visualize_graph_sample(neo4j_uri, neo4j_user, neo4j_password, limit=20):
+    # Get a sample of the graph
+    result = session.run(f"""
+        MATCH (m:Movie)-[:HAS_GENRE]->(g:Genre)
+        WITH m, collect(g.name) as genres
+        MATCH (m)<-[:ACTED_IN]-(p:Person)
+        WITH m, genres, collect(p.name)[0..2] as actors
+        RETURN m.title as movie, genres, actors
+        LIMIT {limit}
+    """)
+    
+    # Create NetworkX graph
+    G = nx.Graph()
+    # ... visualization code
+        </div>
+        
+        <img src="https://raw.githubusercontent.com/saru2020/AI_POCs/main/Movies_Graph_RAG_Demo/blog/screenshots/3.png" alt="Graph Visualization">
+        
+        <h3>The First Test: Action Movies</h3>
+        <p>I started with a simple query: <em>"Recommend action movies with great actors"</em></p>
+        
+        <h4>Regular RAG Results:</h4>
+        <div class="results-box">
+            <pre>1. Ra.One (similarity: 0.583)
+2. Vettaiyan (similarity: 0.440)
+3. Michael Madana Kama Rajan (similarity: 0.431)</pre>
+        </div>
+        
+        <img src="https://raw.githubusercontent.com/saru2020/AI_POCs/main/Movies_Graph_RAG_Demo/blog/screenshots/4.png" alt="RAG Results">
+        
+        <p>The RAG system found movies that contained the words "action" and "actors" in their metadata. Pretty straightforward stuff.</p>
+        <p>We already noticed a few issues wrt results where the first 2 were actions flicks though mediocre ones but the last one MMKR wasn't much of an action flick so we know where RAG system really lacks now, it doesn't really know the context since the relationships are missing which plays a crucial part in adding extra relevant context. Now, lets see the results of GraphRAG.</p>
+        
+        <h4>GraphRAG Results:</h4>
+        <div class="results-box">
+            <pre>Amaran
+Ko
+Sivaji: The Boss
+Indian
+Paiyaa</pre>
+        </div>
+        
+        <img src="https://raw.githubusercontent.com/saru2020/AI_POCs/main/Movies_Graph_RAG_Demo/blog/screenshots/5.png" alt="GraphRAG Results">
+        
+        <p>The GraphRAG system found movies through <em>relationships</em> - shared actors, directors, and genre connections. The reasoning was more contextual.</p>
+        <p>We could already see that the GraphRAG worked really well by picking exactly only the action movies and that too the great ones which showcases adding more context through relationships does help LLMs in picking more right choices.</p>
+        
+        <h3>The Comedy Test: A Surprising Success</h3>
+        <p>Next, I tried: <em>"I want comedy movies with good ratings"</em></p>
+        
+        <img src="https://raw.githubusercontent.com/saru2020/AI_POCs/main/Movies_Graph_RAG_Demo/blog/screenshots/6.png" alt="Comedy Test Results">
+        
+        <h4>Regular RAG Results:</h4>
+        <div class="results-box">
+            <pre>🔍 RAG found 5 relevant movies:
+  1. Kaithi 2 (similarity: 0.331)
+  2. Madurey (similarity: 0.331)
+  3. Nitham Oru Vaanam (similarity: 0.326)
+  4. Villu (similarity: 0.325)
+  5. Uppu (similarity: 0.310)
+Based on the provided context of movies, here are the top 5 comedy movie recommendations with good ratings:
+
+1. **Nitham Oru Vaanam**
+   - **Rating:** 6.6
+   - **Overview:** This movie blends romance, thriller, and comedy genres, making it an entertaining watch for those looking for a mix of emotions. The storyline follows an introverted young man finding happiness and positivity in life through the stories of two couples.
+   - **Cast:** Ashok Selvan, Ritu Varma, Aparna Balamurali, Shivathmika, Sshivada Nair
+
+2. **Villu**
+   - **Rating:** 3.8
+   - **Overview:** Despite its lower rating, "Villu" offers a mix of drama, action, and comedy. The plot revolves around a son seeking revenge for his falsely framed and killed father, leading to unexpected twists and a touch of humor.
+   - **Cast:** Vijay, Nayanthara, Vadivelu, Prakash Raj, Ranjitha
+
+These are the only comedy movies with good ratings available in the context provided.</pre>
+        </div>
+        
+        <p>We could see the LLM interestingly came up with 5 choices but also highlighted stating only 2 of them were really into comedy genres.</p>
+        
+        <h4>GraphRAG Results:</h4>
+        <div class="results-box">
+            <pre>🕸️ GraphRAG found movies in context:
+Based on the provided graph context of comedy movies with good ratings, here are the top 5 movie recommendations:
+
+1. **Anbe Sivam**
+   - **Rating:** 7.6
+   - **Overview:** Anbarasu and Nallasivam, two contrasting characters, are brought together by fate and embark on a journey that intertwines their lives.
+   - **Reasoning:** Since you are looking for comedy movies with good ratings, "Anbe Sivam" stands out with its high rating of 7.6. The movie features Kamal Haasan, known for his versatile acting skills, which adds to the quality of the comedy genre.
+
+2. **Michael Madana Kama Rajan**
+   - **Rating:** 7.2
+   - **Overview:** This movie follows the story of quadruplets who were separated at birth and later reunite, leading to hilarious situations.
+   - **Reasoning:** With a rating of 7.2, "Michael Madana Kama Rajan" is another comedy gem that showcases Kamal Haasan's talent. The plot revolving around multiple characters played by the same actor adds a unique and entertaining element to the film.
+
+3. **Siva Manasula Sakthi**
+   - **Rating:** 6.6
+   - **Overview:** Siva and Sakthi initially plan revenge but end up falling for each other, leading to a blend of comedy and romance.
+   - **Reasoning:** While slightly lower in rating, at 6.6, "Siva Manasula Sakthi" offers a mix of comedy and romance, making it a light-hearted watch. The movie features Jiiva, known for his charismatic performances, adding charm to the comedic elements.
+
+4. **Nitham Oru Vaanam**
+   - **Rating:** 6.6
+   - **Overview:** An introverted man finds solace in the stories of others after a heartbreak, leading to a journey of self-discovery.
+   - **Reasoning:** With a rating matching "Siva Manasula Sakthi" at 6.6, "Nitham Oru Vaanam" presents a different take on comedy by intertwining elements of self-growth and positivity. Jiiva's portrayal adds depth to the comedic narrative.
+
+5. **Don**
+   - **Rating:** 6.3
+   - **Overview:** A youngster's journey</pre>
+        </div>
+        
+        <p>We could see it almost picked only the comedy movies even with the smallest dataset of 33 movies we had fed it with, reinstating that the relationship data was adding significant value.</p>
+        
+        <div class="conclusion">
+            <h2>Conclusion</h2>
+            <p><code>Context</code> is everything to a LLM and a good model fed with as much context as possible yields better results and this POC/demonstration with RAG vs GraphRAG is the simplest example of that.</p>
+        </div>
+    </div>
+</body>
+</html>

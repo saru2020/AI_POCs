@@ -10,6 +10,11 @@ A dead simple POC demonstrating GraphRAG vs regular RAG for movie recommendation
 - **GraphRAG**: Uses graph traversal and relationships for recommendations
 - **Side-by-Side Comparison**: Shows the differences between both approaches
 
+## DEMO
+
+![Movies_Graph_RAG_Demo](https://raw.githubusercontent.com/saru2020/AI_POCs/main/Movies_Graph_RAG_Demo/demo.gif)
+
+
 ## 🚀 Quick Start (Jupyter Demo)
 
 ### Option 1: Automated Setup
@@ -135,4 +140,4 @@ This project is licensed under the MIT License.
 
 ---
 
-**Perfect for demos, learning, and understanding GraphRAG concepts!**
+**Demo: learning and understanding GraphRAG concepts!**

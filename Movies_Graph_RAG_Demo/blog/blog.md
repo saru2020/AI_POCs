@@ -160,7 +160,7 @@ The GraphRAG system found movies through *relationships* - shared actors, direct
 
 We could already see that the GraphRAG worked really well by picking exactly only the action movies and that too the great ones which showcases adding more context through relationships does help LLMs in picking more right choices.
 
-### The Comedy Test: A Surprising Success
+### The Comedy genre Test
 
 Next, I tried: *"I want comedy movies with good ratings"*
 

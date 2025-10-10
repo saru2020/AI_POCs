@@ -9,17 +9,25 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
             background-color: #f9f9f9;
         }
         
         .container {
             background-color: white;
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
         }
         
         h1 {
@@ -325,7 +333,7 @@ Paiyaa</pre>
         <p>The GraphRAG system found movies through <em>relationships</em> - shared actors, directors, and genre connections. The reasoning was more contextual.</p>
         <p>We could already see that the GraphRAG worked really well by picking exactly only the action movies and that too the great ones which showcases adding more context through relationships does help LLMs in picking more right choices.</p>
         
-        <h3>The Comedy Test: A Surprising Success</h3>
+        <h3>The Comedy genre Test</h3>
         <p>Next, I tried: <em>"I want comedy movies with good ratings"</em></p>
         
         <img src="https://raw.githubusercontent.com/saru2020/AI_POCs/main/Movies_Graph_RAG_Demo/blog/screenshots/6.png" alt="Comedy Test Results">

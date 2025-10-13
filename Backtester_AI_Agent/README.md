@@ -1,5 +1,7 @@
 # Backtester AI Agent
 
+Here's a short [write up](https://saru2020.medium.com/build-an-equity-backtester-ai-agent-from-scratch-with-python-using-open-free-llm-apis-c6b80e832fa3)
+
 This project demonstrates three different implementations of a stock backtesting agent that calculates historical returns using AI:
 
 1. **Prompt Chaining Implementation** (`backtester_agent_prompt_chained.py`)

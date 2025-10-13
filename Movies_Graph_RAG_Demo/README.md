@@ -10,6 +10,8 @@ A dead simple POC demonstrating GraphRAG vs regular RAG for movie recommendation
 - **GraphRAG**: Uses graph traversal and relationships for recommendations
 - **Side-by-Side Comparison**: Shows the differences between both approaches
 
+Here's a short [write up](https://saru2020.medium.com/exploring-rag-vs-graphrag-with-a-simple-movie-recommendation-system-72da5165eae1)
+
 ## DEMO
 
 ![Movies_Graph_RAG_Demo](https://raw.githubusercontent.com/saru2020/AI_POCs/main/Movies_Graph_RAG_Demo/demo.gif)

@@ -1,0 +1,20 @@
+# Pocket TTS dependencies
+# Note: pocket-tts is installed separately with --no-deps to avoid conflicts
+# Install with: pip install pocket-tts --no-deps
+# Then: pip install -r requirements.txt
+
+# Dependencies for pocket-tts (without pocket-tts itself)
+beartype>=0.22.5
+einops>=0.4.0
+fastapi>=0.100
+huggingface-hub>=0.10
+numpy>=2.0
+pydantic>=2
+python-multipart>=0.0.20
+requests>=2.20.0
+safetensors>=0.4.0
+scipy>=1.5.0
+sentencepiece>=0.2.1
+typer>=0.10.0
+torch>=2.5.0
+uvicorn>=0.13.0

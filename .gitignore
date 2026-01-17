@@ -7,3 +7,14 @@ Movies_Graph_RAG_Demo/.vscode/*
 Backtester_AI_Agent/.venv/*
 Backtester_AI_Agent/.env
 Backtester_AI_Agent/.vscode/*
+# Pocket_TTS specific
+Pocket_TTS/.venv/
+Pocket_TTS/.ipynb_checkpoints/
+Pocket_TTS/.virtual_documents/
+Pocket_TTS/output/*.log
+Pocket_TTS/models/*.safetensors
+Pocket_TTS/__pycache__/
+Pocket_TTS/*.pyc
+Pocket_TTS/*.pyo
+Pocket_TTS/*.pyd
+Pocket_TTS/.Python

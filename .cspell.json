@@ -1,0 +1,7 @@
+{
+  "version": "0.2",
+  "ignorePaths": [
+    "Pocket_TTS/README.md",
+    "Pocket_TTS/docs/README.md"
+  ]
+}

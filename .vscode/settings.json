@@ -1,0 +1,16 @@
+{
+  "cSpell.enabledLanguageIds": [
+    "python",
+    "javascript",
+    "typescript",
+    "json",
+    "yaml",
+    "yml",
+    "toml",
+    "shellscript"
+  ],
+  "cSpell.ignorePaths": [
+    "**/*.md",
+    "**/*.ipynb"
+  ]
+}

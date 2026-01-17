@@ -8,6 +8,8 @@ I tried [`pocket-tts` from kyutai labs](https://github.com/kyutai-labs/pocket-tt
 
 Pocket TTS is a lightweight, CPU-friendly TTS demo. It can speak with a built-in voice or clone a voice from a short audio clip. 
 
+**🔗 Demo Repository:** [Check out the full demo on GitHub](https://github.com/saru2020/AI_POCs/blob/main/Pocket_TTS)
+
 The repo stays lean: one entry script (`src/pocket_tts_demo.py`), a Docker runner (`run.sh`), and helpers that keep the flow smooth. 
 Both paths lead to the same moment: your text turns into a WAV file under `output/`.
 

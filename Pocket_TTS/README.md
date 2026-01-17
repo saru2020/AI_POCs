@@ -25,6 +25,15 @@ A simple demo showcasing Kyutai Pocket TTS - a lightweight text-to-speech model 
      --output /app/output/test.wav
    ```
 
+   **Listen to the generated audio:**
+   
+   <audio controls>
+     <source src="output/test.wav" type="audio/wav">
+     Your browser does not support the audio element. <a href="output/test.wav">Download the audio file</a> instead.
+   </audio>
+   
+   > **Note:** If the audio file doesn't play, make sure you've run the command above first to generate `output/test.wav`. You can also download the file directly by clicking the link.
+
 4. **Play the generated audio:**
    ```bash
    # On macOS
